@@ -1,4 +1,6 @@
+
 import 'package:bookly_app/features/home/presantation/views/widgets/custom_appbar.dart';
+import 'package:bookly_app/features/home/presantation/views/widgets/custom_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -12,6 +14,10 @@ class HomeViewBody extends StatelessWidget {
       child: Column(
         children: [
           CustomAppBar(icon: FontAwesomeIcons.magnifyingGlass),
+          SizedBox(
+            height: 20,
+          ),
+          CustomListViewItim(),
         ],
       ),
     );
