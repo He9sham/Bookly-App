@@ -1,3 +1,4 @@
+import 'package:bookly_app/const.dart';
 import 'package:bookly_app/core/utils/Styles.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/home/presantation/views/widgets/custom_appbar.dart';
@@ -10,27 +11,27 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 35),
+    return  Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 35),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar(icon: FontAwesomeIcons.magnifyingGlass),
-          SizedBox(
+        const  CustomAppBar(icon: FontAwesomeIcons.magnifyingGlass),
+         const SizedBox(
             height: 20,
           ),
-          FeatureBooksListView(),
-          SizedBox(
+         const FeatureBooksListView(),
+         const SizedBox(
             height: 30,
           ),
           Text(
             'Best Seller',
-            style: Styles.textmid,
+            style: Styles.textmid.copyWith(fontFamily: kGtSectraFine),
           ),
-          SizedBox(
+        const  SizedBox(
             height: 15,
           ),
-          BestSellerViewItem()
+        const  BestSellerViewItem()
         ],
       ),
     );
@@ -60,6 +61,26 @@ class BestSellerViewItem extends StatelessWidget {
               ),
             ),
           ),
+          const Column(
+            children: [
+              Text(
+                'Harry Potter\n and the Goblet of fire ',
+                style: TextStyle(fontSize: 20),
+              ),
+              Text(
+                'J.K.Rowling',
+                style: TextStyle(fontSize: 14),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(r'19.99$'),
+                  Text('4.8'),
+                  Text('(2390)'),
+                ],
+              )
+            ],
+          )
         ],
       ),
     );
