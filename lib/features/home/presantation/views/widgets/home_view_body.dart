@@ -1,6 +1,6 @@
 import 'package:bookly_app/const.dart';
-import 'package:bookly_app/core/utils/Styles.dart';
 import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presantation/views/widgets/custom_appbar.dart';
 import 'package:bookly_app/features/home/presantation/views/widgets/feature_books_list_view.dart';
 import 'package:flutter/material.dart';
@@ -11,27 +11,27 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 35),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        const  CustomAppBar(icon: FontAwesomeIcons.magnifyingGlass),
-         const SizedBox(
+          const CustomAppBar(icon: FontAwesomeIcons.magnifyingGlass),
+          const SizedBox(
             height: 20,
           ),
-         const FeatureBooksListView(),
-         const SizedBox(
+          const FeatureBooksListView(),
+          const SizedBox(
             height: 30,
           ),
           Text(
             'Best Seller',
             style: Styles.textmid.copyWith(fontFamily: kGtSectraFine),
           ),
-        const  SizedBox(
-            height: 15,
+          const SizedBox(
+            height: 20,
           ),
-        const  BestSellerViewItem()
+          const BestSellerViewItem()
         ],
       ),
     );
@@ -61,17 +61,21 @@ class BestSellerViewItem extends StatelessWidget {
               ),
             ),
           ),
-          const Column(
+          const SizedBox(
+            width: 30,
+          ),
+          Column(
             children: [
               Text(
-                'Harry Potter\n and the Goblet of fire ',
-                style: TextStyle(fontSize: 20),
+                'Harry Potter\nand the Goblet of fire ',
+                style: Styles.textmlarg
+                    .copyWith(fontSize: 20, fontFamily: kGtSectraFine),
               ),
-              Text(
+              const Text(
                 'J.K.Rowling',
                 style: TextStyle(fontSize: 14),
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(r'19.99$'),
