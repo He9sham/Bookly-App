@@ -1,6 +1,7 @@
 import 'package:bookly_app/const.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/home/presantation/views/home_view.dart';
+import 'package:bookly_app/features/navigation_bar_control.dart';
 import 'package:bookly_app/features/splash/presantation/views/widgets/sliding_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -59,7 +60,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const HomeView(),
+      Get.to(() => const NavigationBarControl(),
           transition: Transition.fade, duration: ktransition);
     });
   }
