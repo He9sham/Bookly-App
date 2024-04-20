@@ -1,6 +1,5 @@
 import 'package:bookly_app/const.dart';
 import 'package:bookly_app/core/utils/assets.dart';
-import 'package:bookly_app/features/home/presantation/views/home_view.dart';
 import 'package:bookly_app/features/navigation_bar_control.dart';
 import 'package:bookly_app/features/splash/presantation/views/widgets/sliding_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -24,7 +23,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initSlidingAnimation();
-
+    
     navigateToHome();
   }
 

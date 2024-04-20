@@ -1,6 +1,6 @@
 import 'package:bookly_app/const.dart';
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presantation/views/widgets/Best_seller_view.dart';
 import 'package:bookly_app/features/home/presantation/views/widgets/custom_appbar.dart';
 import 'package:bookly_app/features/home/presantation/views/widgets/feature_books_list_view.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +12,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 35),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 45),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,62 +31,11 @@ class HomeViewBody extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const BestSellerViewItem()
+          const BestSellerViewItem(),
         ],
       ),
     );
   }
 }
 
-// import 'package:flutter/material.dart';
-
-class BestSellerViewItem extends StatelessWidget {
-  const BestSellerViewItem({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 130,
-      child: Row(
-        children: [
-          AspectRatio(
-            aspectRatio: 2.5 / 4,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.red,
-                image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(AssetsData.testimage),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(
-            width: 30,
-          ),
-          Column(
-            children: [
-              Text(
-                'Harry Potter\nand the Goblet of fire ',
-                style: Styles.textmlarg
-                    .copyWith(fontSize: 20, fontFamily: kGtSectraFine),
-              ),
-              const Text(
-                'J.K.Rowling',
-                style: TextStyle(fontSize: 14),
-              ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(r'19.99$'),
-                  Text('4.8'),
-                  Text('(2390)'),
-                ],
-              )
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
+ 
