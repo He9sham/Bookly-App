@@ -5,6 +5,7 @@ import 'package:bookly_app/features/home/presantation/views/widgets/custom_appba
 import 'package:bookly_app/features/home/presantation/views/widgets/feature_books_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -16,9 +17,15 @@ class HomeViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                child: CustomAppBar(icon: FontAwesomeIcons.magnifyingGlass),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                child: CustomAppBar(
+                  icon: FontAwesomeIcons.magnifyingGlass,
+                  onPressed: () {
+                    GoRouter.of(context).push('/SearchView');
+                  },
+                ),
               ),
               const SizedBox(
                 height: 20,
