@@ -3,7 +3,8 @@ import 'package:bookly_app/features/home/presantation/views/widgets/custom_searc
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.icon, this.ontap, this.onPressed});
+  const CustomAppBar(
+      {super.key, required this.icon, this.ontap, this.onPressed});
 
   final IconData icon;
   final void Function()? ontap;
@@ -18,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
         ),
         const Spacer(),
         CustomSearchIcon(
-          onPressed: onPressed ,
+          onPressed: onPressed,
           ontap: ontap,
           icon: icon,
         )

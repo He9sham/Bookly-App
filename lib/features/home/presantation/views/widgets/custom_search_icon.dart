@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CustomSearchIcon extends StatelessWidget {
-  const CustomSearchIcon({super.key, required this.icon, this.ontap, this.onPressed});
+  const CustomSearchIcon(
+      {super.key, required this.icon, this.ontap, this.onPressed});
 
   final IconData icon;
   final void Function()? ontap;
-  final  void Function()? onPressed;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -15,10 +16,9 @@ class CustomSearchIcon extends StatelessWidget {
         child: GestureDetector(
           onTap: ontap,
           child: IconButton(
-            icon:Icon(icon)  ,
-            onPressed:onPressed ,
+            icon: Icon(icon),
+            onPressed: onPressed,
             color: Colors.white,
-           
           ),
         ),
       ),

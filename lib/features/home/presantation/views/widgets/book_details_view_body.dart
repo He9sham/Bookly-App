@@ -4,7 +4,6 @@ import 'package:bookly_app/features/home/presantation/views/widgets/customappbar
 
 import 'package:flutter/material.dart';
 
-
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
 
@@ -15,13 +14,12 @@ class BookDetailsViewBody extends StatelessWidget {
         SliverFillRemaining(
           hasScrollBody: false,
           child: Padding(
-            padding:
-                 EdgeInsets.symmetric(horizontal: 30.7, vertical: 40.2),
+            padding: EdgeInsets.symmetric(horizontal: 30.7, vertical: 40.2),
             child: Column(
               children: [
-                 CustomappBar(),
-                 BookDetailsSection(),
-                 Expanded(
+                CustomappBar(),
+                BookDetailsSection(),
+                Expanded(
                   child: SizedBox(
                     height: 50,
                   ),
@@ -35,4 +33,3 @@ class BookDetailsViewBody extends StatelessWidget {
     );
   }
 }
-
