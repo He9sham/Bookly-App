@@ -4,17 +4,15 @@ import 'package:bookly_app/features/home/data/Models/bookmodels/bookmodels.dart'
 import 'package:bookly_app/features/home/data/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/services.dart';
 
 class HomeRepoImpl implements HomeRepo {
   ApiService apiService;
   HomeRepoImpl(this.apiService);
   @override
   Future<Either<Failure, List<Bookmodels>>> fetchFeatureBooks() async {
-     try {
+    try {
       var data = await apiService.get(
-          endpoints:
-              'volumes?Filtering=free-ebooks&q=subject:programming');
+          endpoints: 'volumes?Filtering=free-ebooks&q=subject:programming');
       List<Bookmodels> books = [];
       for (var item in data['items']) {
         books.add(Bookmodels.fromJson(item));
