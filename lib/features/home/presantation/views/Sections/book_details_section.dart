@@ -15,7 +15,9 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.17, vertical: 35),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+            imageurl: 'https://www.google.com/imgres?q=image%20book&imgurl=https%3A%2F%2Fjuliaquinn.com%2FWP%2Fwp-content%2Fuploads%2F2024%2F02%2FJQ_special-edition-covers.png&imgrefurl=https%3A%2F%2Fjuliaquinn.com%2Fseries%2Fbridgertons%2F&docid=ic5YTf7bLucAvM&tbnid=oyEHFjA5A9yW0M&vet=12ahUKEwjovbWVuOSFAxWfcaQEHRI8De8QM3oECDoQAA..i&w=439&h=600&hcb=2&ved=2ahUKEwjovbWVuOSFAxWfcaQEHRI8De8QM3oECDoQAA',
+          ),
         ),
         SizedBox(
           height: height * 0.01,
