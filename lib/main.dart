@@ -1,12 +1,10 @@
 import 'package:bookly_app/const.dart';
-import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:bookly_app/core/utils/app_routers.dart';
-import 'package:bookly_app/core/utils/server_locator.dart';
+import 'package:bookly_app/core/Services/server_locator.dart';
 import 'package:bookly_app/features/home/data/repo/home_repo_impl.dart';
 import 'package:bookly_app/features/home/presantation/view_models/feature_books_list/feature_books_list_cubit.dart';
 import 'package:bookly_app/features/home/presantation/view_models/newset_books_list/newset_books_list_cubit.dart';
 import 'package:bookly_app/generated/l10n.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
