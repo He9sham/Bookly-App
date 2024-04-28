@@ -1,14 +1,17 @@
 import 'package:bookly_app/const.dart';
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/data/Models/bookmodels/bookmodels.dart';
 import 'package:bookly_app/features/home/presantation/views/widgets/rating_book.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerViewItem extends StatelessWidget {
-  const BestSellerViewItem({super.key});
+  const BestSellerViewItem({super.key, required this.bookmodels});
+  final Bookmodels bookmodels;
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
         GoRouter.of(context).push('/Bookview');
@@ -19,19 +22,12 @@ class BestSellerViewItem extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 2.5 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.red,
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AssetsData.testimage),
-                  ),
-                ),
-              ),
+              child: CachedNetworkImage(
+                  fit: BoxFit.fill,
+                  imageUrl: bookmodels.volumeInfo.imageLinks.thumbnail),
             ),
-            const SizedBox(
-              width: 30,
+            SizedBox(
+              width: width * 0.09,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,18 +35,21 @@ class BestSellerViewItem extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
                   child: Text(
-                    'Harry Potter and the Goblet of fire ',
+                    bookmodels.volumeInfo.title!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.textmlarg
                         .copyWith(fontSize: 20, fontFamily: kGtSectraFine),
                   ),
                 ),
-                const Text(
-                  'J.K.Rowling',
-                  style: TextStyle(fontSize: 14),
+                Text(
+                  bookmodels.volumeInfo.authors![0],
+                  style: const TextStyle(fontSize: 14),
                 ),
-                const RatingBook()
+                RatingBook(
+                  count: bookmodels.volumeInfo.pageCount ?? 0,
+                  language: bookmodels.volumeInfo.language ?? 'en',
+                )
               ],
             )
           ],

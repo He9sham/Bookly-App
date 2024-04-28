@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RatingBook extends StatelessWidget {
-  const RatingBook({super.key});
+  const RatingBook({super.key, required this.language, required this.count});
+  final String language;
+  final int count;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         const Text(
-          r'19.99$',
+          'Free',
           style: Styles.textmid,
         ),
         SizedBox(
@@ -21,17 +23,17 @@ class RatingBook extends StatelessWidget {
           size: 16,
         ),
         Text(
-          '  4.8',
+          ('  ($count)'),
           style: Styles.textmid.copyWith(
             fontSize: 16,
           ),
         ),
         SizedBox(
-          width: MediaQuery.of(context).size.width / 40,
+          width: MediaQuery.of(context).size.width / 30,
         ),
-        const Text(
-          '(2390)',
-          style: Styles.textsmail,
+        Text(
+          language,
+          style: Styles.textmid.copyWith(fontSize: 15),
         ),
       ],
     );
