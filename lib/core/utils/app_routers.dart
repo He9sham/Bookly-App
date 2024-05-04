@@ -19,8 +19,9 @@ abstract class AppRouter {
         builder: (context, state) => const NavigationBarControl(),
       ),
       GoRoute(
-          path: '/Bookview',
-          builder: (context, state) => const BookDetailsView()),
+        path: '/Bookview',
+        builder: (context, state) => const BookDetailsView(),
+      ),
       GoRoute(
         path: '/SearchView',
         builder: (context, state) => const SearchView(),

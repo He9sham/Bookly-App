@@ -14,7 +14,7 @@ class BestSellerViewItem extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push('/Bookview');
+        GoRouter.of(context).push('/Bookview' , extra: bookmodels);
       },
       child: SizedBox(
         height: 130,

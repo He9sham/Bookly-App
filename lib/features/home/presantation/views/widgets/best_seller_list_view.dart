@@ -15,7 +15,7 @@ class BestSellerListView extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: state.books.length,
             itemBuilder: (context, index) {
-              return  Padding(
+              return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: BestSellerViewItem(
                   bookmodels: state.books[index],
@@ -23,8 +23,10 @@ class BestSellerListView extends StatelessWidget {
               );
             });
       } else if (state is NewsetBooksListFailure) {
-        return const Center(
-          child: Text('was an error'),
+        return Center(
+          child: Text(
+            state.errmessage,
+          ),
         );
       } else {
         return const Center(

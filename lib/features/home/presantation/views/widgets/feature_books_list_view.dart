@@ -27,8 +27,10 @@ class FeatureBooksListView extends StatelessWidget {
                 }),
           );
         } else if (state is FeatureBooksListfailure) {
-          return const Center(
-            child: Text('wan an error'),
+          return Center(
+            child: Text(
+              state.errmessage,
+            ),
           );
         } else {
           return const Center(
