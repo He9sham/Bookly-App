@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRate extends StatelessWidget {
-  const BookRate({super.key});
+  const BookRate({super.key, required this.pagecount, required this.languch});
+  final int pagecount;
+  final String languch;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -15,7 +17,7 @@ class BookRate extends StatelessWidget {
           size: 16,
         ),
         Text(
-          '  4.8',
+          '  $pagecount',
           style: Styles.textmid.copyWith(
             fontSize: 16,
           ),
@@ -23,8 +25,8 @@ class BookRate extends StatelessWidget {
         SizedBox(
           width: MediaQuery.of(context).size.width / 40,
         ),
-        const Text(
-          '(2390)',
+        Text(
+          languch,
           style: Styles.textsmail,
         ),
       ],

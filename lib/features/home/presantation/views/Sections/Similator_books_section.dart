@@ -1,3 +1,4 @@
+
 import 'package:bookly_app/features/home/presantation/views/widgets/books_similer_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,7 +7,7 @@ import '../../../../../core/utils/styles.dart';
 
 class SimilatorBooksSection extends StatelessWidget {
   const SimilatorBooksSection({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,7 +24,7 @@ class SimilatorBooksSection extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        const SimiletorBooKsView()
+       const  SimiletorBooKsView()
       ],
     );
   }
