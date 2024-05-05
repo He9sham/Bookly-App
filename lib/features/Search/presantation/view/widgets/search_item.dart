@@ -1,6 +1,5 @@
-import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 class SearchWidget extends StatefulWidget {
   const SearchWidget({super.key});
@@ -201,6 +200,7 @@ class _SearchWidgetState extends State<SearchWidget>
                                     ),
                                   ),
                                   onChanged: (value) {
+                                    
                                     if (value.isNotEmpty) {
                                       setState(() {
                                         _showSearchResult = true;
@@ -239,63 +239,6 @@ class _SearchWidgetState extends State<SearchWidget>
                               ),
                             ],
                           ),
-                          Expanded(
-                            child: Visibility(
-                              visible: _showSearchResult,
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  children: [
-                                    Divider(
-                                      indent: 16.0,
-                                      endIndent: 16.0,
-                                      height: 3.0,
-                                      color: Colors.black.withOpacity(0.5),
-                                    ),
-                                    const ListTile(
-                                      leading: Padding(
-                                        padding: EdgeInsets.all(8.0),
-                                        child: Icon(Icons.sports_soccer),
-                                      ),
-                                      title: Text(
-                                        'Hehsam hamdan',
-                                        style: Styles.colorhintsearch,
-                                      ),
-                                      subtitle: Text(
-                                        'Follow me on instagram',
-                                        style: Styles.colorhintsearch,
-                                      ),
-                                    ),
-                                    const ListTile(
-                                      leading: Padding(
-                                        padding: EdgeInsets.all(8.0),
-                                        child: Icon(FontAwesomeIcons.twitter),
-                                      ),
-                                      title: Text(
-                                        'Hehsam hamdan',
-                                        style: Styles.colorhintsearch,
-                                      ),
-                                      subtitle: Text(
-                                        'Follow me on twitter',
-                                        style: Styles.colorhintsearch,
-                                      ),
-                                    ),
-                                    const ListTile(
-                                      leading: Padding(
-                                        padding: EdgeInsets.all(8.0),
-                                        child: Icon(FontAwesomeIcons.github),
-                                      ),
-                                      title: Text(
-                                        'Hehsam hamdan',
-                                        style: Styles.colorhintsearch,
-                                      ),
-                                      subtitle: Text('Follow me  on github',
-                                          style: Styles.colorhintsearch),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          )
                         ],
                       ),
                     )
