@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 
+
 class SearchWidget extends StatefulWidget {
   const SearchWidget({super.key});
 
@@ -200,16 +201,7 @@ class _SearchWidgetState extends State<SearchWidget>
                                     ),
                                   ),
                                   onChanged: (value) {
-                                    
-                                    if (value.isNotEmpty) {
-                                      setState(() {
-                                        _showSearchResult = true;
-                                      });
-                                    } else {
-                                      setState(() {
-                                        _showSearchResult = false;
-                                      });
-                                    }
+                                   
                                   },
                                 ),
                               ),
