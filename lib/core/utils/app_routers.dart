@@ -7,22 +7,23 @@ import 'package:bookly_app/features/home/data/repo/home_repo_impl.dart';
 import 'package:bookly_app/features/home/presantation/view_models/similer_books/similar_books_cubit.dart';
 import 'package:bookly_app/features/home/presantation/views/book_details_view.dart';
 import 'package:bookly_app/features/navigation_bar_control.dart';
+import 'package:bookly_app/features/splash/presantation/views/splash_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
   static final router = GoRouter(
     routes: [
-      // GoRoute(
-      //   path: '/',
-      //   builder: (context, state) => const SplashView(),
-      // ),
+      GoRoute(
+        path: '/',
+        builder: (context, state) => const SplashView(),
+      ),
       // GoRoute(
       //   path: '/',
       //   builder: (context, state) => const LoginView(),
       // ),
       GoRoute(
-        path: '/',
+        path: '/HomeView',
         builder: (context, state) => const NavigationBarControl(),
       ),
       GoRoute(
