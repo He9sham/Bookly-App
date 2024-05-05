@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/widgets/loading_widget_error.dart';
 import 'package:bookly_app/features/home/presantation/view_models/feature_books_list/feature_books_list_cubit.dart';
 import 'package:bookly_app/features/home/presantation/views/widgets/custom_list_view_item.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,7 @@ class FeatureBooksListView extends StatelessWidget {
           );
         } else {
           return const Center(
-            child: CircularProgressIndicator(),
+            child: LoadingWidgetError(),
           );
         }
       },

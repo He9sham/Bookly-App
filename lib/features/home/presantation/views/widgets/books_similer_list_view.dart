@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/widgets/loading_widget_error.dart';
 import 'package:bookly_app/features/home/presantation/view_models/similer_books/similar_books_cubit.dart';
 import 'package:bookly_app/features/home/presantation/views/widgets/custom_list_view_item.dart';
 import 'package:flutter/material.dart';
@@ -38,9 +39,7 @@ class SimiletorBooKsView extends StatelessWidget {
             child: Text(state.errmessage),
           );
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const Center(child: LoadingWidgetError());
         }
       },
     );

@@ -30,8 +30,7 @@ class SearchViewBody extends StatelessWidget {
           Expanded(
             child: Padding(
               padding:  EdgeInsets.only(left: 16),
-              child: BooklistView(
-              ),
+              child: BooklistView(),
             ),
           ),
         ],

@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/widgets/loading_widget_error.dart';
 import 'package:bookly_app/features/Search/presantation/view_model/Search/search_cubit.dart';
 import 'package:bookly_app/features/home/presantation/views/widgets/Best_seller_view.dart';
 import 'package:flutter/material.dart';
@@ -15,17 +16,17 @@ class BooklistView extends StatelessWidget {
               shrinkWrap: true,
               itemCount: state.books.length,
               itemBuilder: (context, index) {
-                return  Padding(
+                return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
-                   child: BestSellerViewItem( bookmodels: state.books[index]),
+                  child: BestSellerViewItem(bookmodels: state.books[index]),
                 );
               });
         } else if (state is SearchFauiler) {
-          return const Center(child: Text('was an error'),);
-        } else {
-          return const Center(
-            child: CircularProgressIndicator(),
+          return Center(
+            child: Text(state.errmessage),
           );
+        } else {
+          return const LoadingWidgetError();
         }
       },
     );
