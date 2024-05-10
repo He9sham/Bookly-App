@@ -1,5 +1,4 @@
 import 'package:bookly_app/core/utils/assets.dart';
-
 import 'package:bookly_app/features/splash/presantation/views/widgets/sliding_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +21,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initSlidingAnimation();
-
     navigateToHome();
   }
 
@@ -52,12 +50,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
 
     slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
             .animate(animationController);
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 1), () {
       GoRouter.of(context).push('/HomeView');
     });
   }
