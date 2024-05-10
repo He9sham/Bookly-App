@@ -60,9 +60,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     style: Styles.textmid.copyWith(fontFamily: kGtSectraFine),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
               ],
             ),
           ),

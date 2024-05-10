@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 
 class SearchWidget extends StatefulWidget {
-  const SearchWidget({super.key});
-
+  const SearchWidget({super.key, required this.onSearch});
+   final Function(String) onSearch;
   @override
   State<SearchWidget> createState() => _SearchWidgetState();
 }
@@ -200,9 +200,7 @@ class _SearchWidgetState extends State<SearchWidget>
                                       color: Colors.black.withOpacity(0.4),
                                     ),
                                   ),
-                                  onChanged: (value) {
-                                   
-                                  },
+                                  onChanged: (value) => widget.onSearch(value),
                                 ),
                               ),
                               GestureDetector(

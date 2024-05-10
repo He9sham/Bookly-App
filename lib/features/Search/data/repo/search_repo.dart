@@ -3,5 +3,5 @@ import 'package:bookly_app/features/home/data/Models/bookmodels/bookmodels.dart'
 import 'package:dartz/dartz.dart';
 
 abstract class SearchRepo {
-  Future<Either<Failure, List<Bookmodels>>> fetchSearchBooks();
+  Future<Either<Failure, List<Bookmodels>>> fetchSearchBooks(String query);
 }

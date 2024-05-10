@@ -4,32 +4,34 @@ import 'package:bookly_app/features/Search/presantation/view/widgets/search_item
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({super.key});
-
+  const SearchViewBody({super.key, required this.onsearch});
+  final dynamic Function(String) onsearch;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 14),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 80,
           ),
-          SearchWidget(),
-          SizedBox(
+          SearchWidget(
+            onSearch: onsearch ,
+          ),
+          const SizedBox(
             height: 15,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(left: 16),
             child: Text(
               'Search Result',
               style: Styles.textmid,
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Padding(
-              padding:  EdgeInsets.only(left: 16),
+              padding: EdgeInsets.only(left: 16),
               child: BooklistView(),
             ),
           ),
