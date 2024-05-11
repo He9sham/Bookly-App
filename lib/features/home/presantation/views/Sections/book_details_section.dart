@@ -34,7 +34,7 @@ class BookDetailsSection extends StatelessWidget {
           height: 4,
         ),
         Text(
-          bookmodels.volumeInfo.authors![0],
+          bookmodels.volumeInfo.authors[0],
           style: Styles.textmid.copyWith(
             fontFamily: GoogleFonts.montserrat().fontFamily,
             color: Colors.white.withOpacity(0.6),

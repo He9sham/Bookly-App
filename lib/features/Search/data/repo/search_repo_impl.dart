@@ -12,7 +12,7 @@ class SearchRepoimpl implements SearchRepo {
   Future<Either<Failure, List<Bookmodels>>> fetchSearchBooks(String query) async {
     try {
       var data = await apiService.get(
-          endpoints: 'volumes?Filtering=free-ebooks&q=subject:$query');
+          endpoints: 'volumes?Filtering=free-ebooks&q=$query');
       List<Bookmodels> books = [];
       for (var item in data['items']) {
         books.add(Bookmodels.fromJson(item));

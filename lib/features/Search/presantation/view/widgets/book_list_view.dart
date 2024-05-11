@@ -24,28 +24,43 @@ class BooklistView extends StatelessWidget {
                   child: BestSellerViewItem(bookmodels: state.books[index]),
                 );
               });
-        } else if (state is SearchFauiler)  {
+        } else if (state is SearchFauiler) {
           return Center(
             child: Text(state.errmessage),
           );
         } else {
-          if (state != null)  {
-            return Center(
-              child: Column(
-                children: [
-                  Image.asset('assets/images/msg1683023380-39546.jpg'),
-                  const Text(
-                    'What kind of books do you want to look for?',
-                    style: Styles.textmid,
-                  )
-                ],
-              ),
-            );
-          } else {
-            return const LoadingWidgetError();
-          }
+          return ShowWhenTheDataNull(state);
         }
       },
     );
+  }
+
+  // ignore: non_constant_identifier_names
+  Widget ShowWhenTheDataNull(SearchState state) {
+    if (state != null) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/msg1683023380-39546.jpg',
+              height: 200,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              'What kind of books do you want to look for?',
+              style: Styles.textmid,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+      );
+    } else {
+      return const LoadingWidgetError();
+    }
   }
 }

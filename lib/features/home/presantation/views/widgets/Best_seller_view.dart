@@ -43,8 +43,10 @@ class BestSellerViewItem extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  bookmodels.volumeInfo.authors![0],
+                  bookmodels.volumeInfo.authors[0],
                   style: const TextStyle(fontSize: 14),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                 ),
                 RatingBook(
                   count: bookmodels.volumeInfo.pageCount ?? 0,
@@ -58,3 +60,5 @@ class BestSellerViewItem extends StatelessWidget {
     );
   }
 }
+
+// ksin     noteka 2015
