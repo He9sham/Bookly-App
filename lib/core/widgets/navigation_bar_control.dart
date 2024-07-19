@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/presantation/views/widgets/navigation_bar.dart';
+import 'package:bookly_app/features/home/views/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class NavigationBarControl extends StatelessWidget {

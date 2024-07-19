@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/presantation/views/widgets/home_view_body.dart';
+import 'package:bookly_app/features/home/views/widgets/home_view_body.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
