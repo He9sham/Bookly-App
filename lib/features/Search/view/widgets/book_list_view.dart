@@ -2,8 +2,8 @@
 
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/core/widgets/loading_widget_error.dart';
-import 'package:bookly_app/features/Search/presantation/view_model/Search/search_cubit.dart';
-import 'package:bookly_app/features/home/presantation/views/widgets/Best_seller_view.dart';
+import 'package:bookly_app/features/Search/logic/Search/search_cubit.dart';
+import 'package:bookly_app/features/home/views/widgets/Best_seller_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

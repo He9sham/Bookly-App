@@ -1,9 +1,9 @@
 
-import 'package:bookly_app/features/home/presantation/views/widgets/books_similer_list_view.dart';
+import 'package:bookly_app/features/home/views/widgets/books_similer_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../../core/utils/styles.dart';
+import '../../../../core/utils/styles.dart';
 
 class SimilatorBooksSection extends StatelessWidget {
   const SimilatorBooksSection({super.key});

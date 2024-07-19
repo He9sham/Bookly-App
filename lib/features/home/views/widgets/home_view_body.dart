@@ -1,10 +1,10 @@
 import 'package:bookly_app/const.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presantation/views/widgets/auth_router.dart';
-import 'package:bookly_app/features/home/presantation/views/widgets/best_seller_list_view.dart';
-import 'package:bookly_app/features/home/presantation/views/widgets/custom_appbar.dart';
-import 'package:bookly_app/features/home/presantation/views/widgets/custom_drawer.dart';
-import 'package:bookly_app/features/home/presantation/views/widgets/feature_books_list_view.dart';
+import 'package:bookly_app/features/home/views/widgets/auth_router.dart';
+import 'package:bookly_app/features/home/views/widgets/best_seller_list_view.dart';
+import 'package:bookly_app/features/home/views/widgets/custom_appbar.dart';
+import 'package:bookly_app/features/home/views/widgets/custom_drawer.dart';
+import 'package:bookly_app/features/home/views/widgets/feature_books_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';

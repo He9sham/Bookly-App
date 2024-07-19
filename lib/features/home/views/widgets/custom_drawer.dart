@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/presantation/views/widgets/custom_list_item.dart';
+import 'package:bookly_app/features/home/views/widgets/custom_list_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
