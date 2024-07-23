@@ -10,6 +10,11 @@ class FeatureBooksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FeatureBooksListCubit, FeatureBooksListState>(
+      buildWhen: (previous, current) {
+        return current is FeatureBooksListsuccess ||
+            current is FeatureBooksListfailure ||
+            current is FeatureBooksListLoading;
+      },
       builder: (context, state) {
         if (state is FeatureBooksListsuccess) {
           return SizedBox(
@@ -41,8 +46,8 @@ class FeatureBooksListView extends StatelessWidget {
             ),
           );
         } else {
-          return const Center(
-            child: LoadingWidgetError(),
+          return const LoadingWidgetError(
+            axis: Axis.horizontal,
           );
         }
       },

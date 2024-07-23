@@ -21,7 +21,9 @@ class BooklistView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: BestSellerViewItem(bookmodels: state.books[index]),
+                  child: BestSellerViewItem(
+                    bookmodels: state.books[index],
+                  ),
                 );
               });
         } else if (state is SearchFauiler) {
@@ -60,7 +62,9 @@ class BooklistView extends StatelessWidget {
         ),
       );
     } else {
-      return const LoadingWidgetError();
+      return const LoadingWidgetError(
+        axis: Axis.vertical,
+      );
     }
   }
 }

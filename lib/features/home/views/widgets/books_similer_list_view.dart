@@ -39,7 +39,10 @@ class SimiletorBooKsView extends StatelessWidget {
             child: Text(state.errmessage),
           );
         } else {
-          return const Center(child: LoadingWidgetError());
+          return const Center(
+              child: LoadingWidgetError(
+            axis: Axis.horizontal,
+          ));
         }
       },
     );
