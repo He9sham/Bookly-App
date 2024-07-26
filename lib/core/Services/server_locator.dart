@@ -12,9 +12,12 @@ void setupServerLocator() {
       Dio(),
     ),
   );
+
+  // home page
   getIt.registerSingleton<HomeRepoImpl>(
     HomeRepoImpl(getIt.get<ApiService>()),
   );
+  // search page 
   getIt.registerSingleton<SearchRepoimpl>(
     SearchRepoimpl(getIt.get<ApiService>()),
   );
