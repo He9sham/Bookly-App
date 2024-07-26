@@ -1,8 +1,10 @@
 // ignore_for_file: unnecessary_null_comparison
+import 'dart:math';
 
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/core/widgets/loading_widget_error.dart';
 import 'package:bookly_app/features/Search/logic/Search/search_cubit.dart';
+import 'package:bookly_app/features/Search/view/widgets/custom_loading_for_search_view.dart';
 import 'package:bookly_app/features/home/views/widgets/Best_seller_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +19,7 @@ class BooklistView extends StatelessWidget {
           return ListView.builder(
               padding: EdgeInsets.zero,
               shrinkWrap: true,
-              itemCount: state.books.length,
+              itemCount: min(4, state.books.length),
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
@@ -27,9 +29,12 @@ class BooklistView extends StatelessWidget {
                 );
               });
         } else if (state is SearchFauiler) {
-          return Center(
-            child: Text(state.errmessage),
+          return const Center(
+            child: Text(
+                'There is no book with this name. Please try again later!'),
           );
+        } else if (state is SearchLoading) {
+          return const CustomLoadingForSearchView();
         } else {
           return ShowWhenTheDataNull(state);
         }
