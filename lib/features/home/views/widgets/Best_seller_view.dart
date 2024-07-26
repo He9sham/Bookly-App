@@ -1,4 +1,5 @@
 import 'package:bookly_app/const.dart';
+import 'package:bookly_app/core/helper/spacing.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/data/Models/bookmodels/bookmodels.dart';
 import 'package:bookly_app/features/home/views/widgets/rating_book.dart';
@@ -11,10 +12,9 @@ class BestSellerViewItem extends StatelessWidget {
   final Bookmodels bookmodels;
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push('/Bookview' , extra: bookmodels);
+        GoRouter.of(context).push('/Bookview', extra: bookmodels);
       },
       child: SizedBox(
         height: 130,
@@ -27,13 +27,13 @@ class BestSellerViewItem extends StatelessWidget {
                   imageUrl: bookmodels.volumeInfo.imageLinks.thumbnail),
             ),
             SizedBox(
-              width: width * 0.09,
+              width: sizeOfWidth(0.04, context),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.5,
+                  width: sizeOfWidth(0.5, context),
                   child: Text(
                     bookmodels.volumeInfo.title!,
                     maxLines: 2,
@@ -45,8 +45,8 @@ class BestSellerViewItem extends StatelessWidget {
                 Text(
                   bookmodels.volumeInfo.authors[0],
                   style: const TextStyle(fontSize: 14),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 RatingBook(
                   count: bookmodels.volumeInfo.pageCount ?? 0,
