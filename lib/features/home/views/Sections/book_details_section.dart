@@ -48,7 +48,34 @@ class BookDetailsSection extends StatelessWidget {
           pagecount: bookmodels.volumeInfo.pageCount!,
         ),
         const SizedBox(
-          height: 37,
+          height: 20,
+        ),
+        Container(
+          height: 120,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Colors.grey,
+          ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10, top: 5),
+                child: Text(
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                  ),
+                  maxLines: 5,
+                  bookmodels.volumeInfo.description ?? "",
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(
+          height: 20,
         ),
         BooksAction(
           bookmodels: bookmodels,
@@ -57,3 +84,5 @@ class BookDetailsSection extends StatelessWidget {
     );
   }
 }
+
+
