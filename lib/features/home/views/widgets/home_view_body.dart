@@ -46,7 +46,12 @@ class HomeViewBody extends StatelessWidget {
                       },
                     ),
                   ),
-                  const CustomTapBar(),
+                  CustomTapBar(
+                    onCategorySelected: (p) {
+                      
+                    },
+                  ),
+                  // use the features in futuer by: hesham hemdan
                   // const AuthRouter(),
                   SizedBox(
                     height: 20.h,

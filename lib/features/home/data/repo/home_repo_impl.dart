@@ -5,7 +5,7 @@ import 'package:bookly_app/features/home/data/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-String categoryType = 'programming';
+
 
 class HomeRepoImpl implements HomeRepo {
   ApiService apiService;
@@ -14,7 +14,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<Bookmodels>>> fetchFeatureBooks() async {
     try {
       var data = await apiService.get(
-          endpoints: 'volumes?Filtering=free-ebooks&q=subject:$categoryType');
+          endpoints: 'volumes?Filtering=free-ebooks&q=subject:programming');
       List<Bookmodels> books = [];
       for (var item in data['items']) {
         books.add(Bookmodels.fromJson(item));
