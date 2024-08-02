@@ -5,16 +5,17 @@ import 'package:bookly_app/features/home/data/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-
-
 class HomeRepoImpl implements HomeRepo {
   ApiService apiService;
+
   HomeRepoImpl(this.apiService);
   @override
-  Future<Either<Failure, List<Bookmodels>>> fetchFeatureBooks() async {
+  Future<Either<Failure, List<Bookmodels>>> fetchFeatureBooks(
+      String category) async {
     try {
       var data = await apiService.get(
-          endpoints: 'volumes?Filtering=free-ebooks&q=subject:programming');
+          endpoints:
+              'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:$category');
       List<Bookmodels> books = [];
       for (var item in data['items']) {
         books.add(Bookmodels.fromJson(item));
@@ -29,11 +30,12 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<Bookmodels>>> fetchNewsetBooks() async {
+  Future<Either<Failure, List<Bookmodels>>> fetchNewsetBooks(
+      String category) async {
     try {
       var data = await apiService.get(
           endpoints:
-              'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:computer science');
+              'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:$category');
       List<Bookmodels> books = [];
       for (var item in data['items']) {
         try {
@@ -57,7 +59,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
           endpoints:
-              'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:programming');
+              'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:$category');
       List<Bookmodels> books = [];
       for (var item in data['items']) {
         books.add(Bookmodels.fromJson(item));
