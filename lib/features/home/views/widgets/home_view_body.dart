@@ -18,6 +18,7 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String selectedCategory = context.watch<NewsetBooksListCubit>().category;
     return Scaffold(
       key: context.read<FeatureBooksListCubit>().scaffoldstate,
       drawer: const SafeArea(
@@ -25,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
       ),
       body: RefreshIndicator(
         onRefresh: () async {
-          await refrashMethod(context);
+          await refrashMethod(context, selectedCategory);
         },
         child: CustomScrollView(
           slivers: [
@@ -34,8 +35,8 @@ class HomeViewBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 30, vertical: 30),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
                     child: CustomAppBar(
                       onPressed2: () {
                         openDrawerMethod(context);
@@ -46,10 +47,14 @@ class HomeViewBody extends StatelessWidget {
                       },
                     ),
                   ),
-                  CustomTapBar(
-                    onCategorySelected: (p) {
-                      
-                    },
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    child: CustomTapBar(
+                      onCategorySelected: (p) async {
+                        selectedCategory = p;
+                        await showBooksForTapBar(context, selectedCategory);
+                      },
+                    ),
                   ),
                   // use the features in futuer by: hesham hemdan
                   // const AuthRouter(),
@@ -82,6 +87,17 @@ class HomeViewBody extends StatelessWidget {
     );
   }
 
+  Future<void> showBooksForTapBar(
+      BuildContext context, String selectedCategory) async {
+    await context
+        .read<NewsetBooksListCubit>()
+        .fetchNewsetBooks(selectedCategory);
+    // ignore: use_build_context_synchronously
+    await context
+        .read<FeatureBooksListCubit>()
+        .fetchFeatureBooks(selectedCategory);
+  }
+
   void openDrawerMethod(BuildContext context) {
     context
         .read<FeatureBooksListCubit>()
@@ -90,9 +106,13 @@ class HomeViewBody extends StatelessWidget {
         .openDrawer();
   }
 
-  Future<void> refrashMethod(BuildContext context) async {
-    context.read<FeatureBooksListCubit>().fetchFeatureBooks();
-    context.read<NewsetBooksListCubit>().fetchNewsetBooks();
+  Future<void> refrashMethod(
+      BuildContext context, String selectedCategory) async {
+    await context
+        .read<FeatureBooksListCubit>()
+        .fetchFeatureBooks('programming');
+    // ignore: use_build_context_synchronously
+    await context.read<NewsetBooksListCubit>().fetchNewsetBooks('programming');
     await Future.delayed(const Duration(seconds: 2));
   }
 }

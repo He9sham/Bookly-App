@@ -32,12 +32,12 @@ abstract class AppRouter {
             BlocProvider(
           create: (context) => FeatureBooksListCubit(
             getIt.get<HomeRepoImpl>(),
-          )..fetchFeatureBooks(),
+          )..fetchFeatureBooks('programming'),
         ),
         BlocProvider(
           create: (context) => NewsetBooksListCubit(
             getIt.get<HomeRepoImpl>(),
-          )..fetchNewsetBooks(),
+          )..fetchNewsetBooks('programming'),
         ),
           ],
           child: const HomeView(),

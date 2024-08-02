@@ -26,8 +26,8 @@ class _CustomTapBarState extends State<CustomTapBar> {
               onTap: () {
                 setState(() {
                   selectedIndex = 0;
+                  widget.onCategorySelected('programming');
                 });
-                widget.onCategorySelected('programming');
               }),
           horizontalSpace(9),
           itemtapbar(
@@ -36,18 +36,18 @@ class _CustomTapBarState extends State<CustomTapBar> {
               onTap: () {
                 setState(() {
                   selectedIndex = 1;
+                  widget.onCategorySelected('sports');
                 });
-                widget.onCategorySelected('sports');
               }),
           horizontalSpace(9),
           itemtapbar(
               title: 'moveis',
               isSelected: selectedIndex == 2,
-             onTap: () {
+              onTap: () {
                 setState(() {
                   selectedIndex = 2;
+                  widget.onCategorySelected('movies');
                 });
-                widget.onCategorySelected('movies');
               }),
           horizontalSpace(9),
           itemtapbar(
@@ -56,8 +56,8 @@ class _CustomTapBarState extends State<CustomTapBar> {
               onTap: () {
                 setState(() {
                   selectedIndex = 3;
+                  widget.onCategorySelected('cooks');
                 });
-                widget.onCategorySelected('cooks');
               }),
         ],
       ),

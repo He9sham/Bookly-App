@@ -40,9 +40,9 @@ class FeatureBooksListView extends StatelessWidget {
                 }),
           );
         } else if (state is FeatureBooksListfailure) {
-          return Center(
+          return const Center(
             child: Text(
-              state.errmessage,
+              'Was an error',
             ),
           );
         } else {
